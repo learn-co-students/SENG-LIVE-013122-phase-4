@@ -15,6 +15,6 @@ class TicketsController < ApplicationController
         # NOTE => Use "byebug" to test your code in Terminal
         # byebug
         ticket = Ticket.find(params[:id])
-        render json: ticket
+        render json: ticket, include: [:production, :user]
     end 
 end

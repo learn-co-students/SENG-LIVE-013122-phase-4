@@ -15,6 +15,6 @@ class UsersController < ApplicationController
         # NOTE => Use "byebug" to test your code in Terminal
         # byebug
         user = User.find(params[:id])
-        render json: user
+        render json: user, include: [:tickets, :productions]
     end 
 end

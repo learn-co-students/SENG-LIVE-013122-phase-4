@@ -5,6 +5,6 @@ class ProductionRolesController < ApplicationController
 
     def show
         production_roles = ProductionRole.find(params[:id])
-        render json: production_roles
+        render json: production_roles, include: :production
     end 
 end
