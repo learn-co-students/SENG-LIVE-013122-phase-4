@@ -6,4 +6,6 @@ class User < ApplicationRecord
     # 2. Add Active Record Associations
     # User "has_many" Tickets
     # User "has_many" Productions Through User
+    has_many :tickets
+    has_many :productions, through: :tickets
 end

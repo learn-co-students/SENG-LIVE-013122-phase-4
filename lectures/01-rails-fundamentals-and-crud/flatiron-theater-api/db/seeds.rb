@@ -6,3 +6,9 @@ ProductionRole.create(role:'Hamlet', understudy:true, production: p1)
 
 # 1. Generate Ticket + User Seed Data
 # 2. Confirm results by running "rake db:seed:replant"
+
+u1 = User.create(name:'Bob', admin:false)
+u2 = User.create(name:'Beth', admin:true)
+
+Ticket.create(price:1, user: u1, production: p1)
+

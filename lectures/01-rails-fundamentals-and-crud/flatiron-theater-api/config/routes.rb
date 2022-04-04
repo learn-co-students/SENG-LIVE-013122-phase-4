@@ -8,5 +8,13 @@ Rails.application.routes.draw do
   # NOTE: Make sure to check routes in console with "rails routes"
   
   resources :productions, only: [:index, :show]
+  resources :production_roles, only: [:index, :show]
+  resources :tickets, only: [:index, :show]
+  resources :users, only: [:index, :show]
+
+
+
   #  get '/productions', to: 'production#index'
+
+
 end
