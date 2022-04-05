@@ -1,4 +1,4 @@
-# Client Server Communication pt1
+# Client Server Communication (Part 1)
 
 ## Lecture Objectives
 
