@@ -1,8 +1,8 @@
-# Phase-4-112221
+# Client Server Communication (Part 1)
 
-# Client Server Communication pt1
-## SWBAT
-- [] Use built in rails validations
+## Lecture Objectives
+
+- [] Use built-in Rails validations
 - [] Use strong params
 - [] Create error handling for validations 
 - [] Build out create actions that trigger validations and respond with the appropriate status code
@@ -11,9 +11,9 @@
 ![domain_2](assets/domain_2.png)
 
 ### Create Action and strong params
->Note: To review why we use strong params review the `Strong Params and Mass Assignment` on canvas.
+>Note: To review why we use strong params review the `Strong Params and Mass Assignment` on Canvas.
 
-To prevent malicious users from abusing mass assignment, rails does not allow params to be passed to `.create`  
+To prevent malicious users from abusing mass assignment, Rails does not allow params to be passed to `.create`  
 
 Strong params must be use to easily pass params. 
 
@@ -39,11 +39,11 @@ wrap_parameters format: []
 ```
 
 ### Validations
-Validation help maintains accurate valid data.
+Validations help to maintain accurate, valid data.
 
 Validations can be created in the client, database, controller and model.
 
-Rails validates through the model during the `.create` or `.save`
+Rails validates through the model during `.create` or `.save`
 
 #### Validation Helpers 
 Rails has built in validation helpers that can be included in the model. `validates :attribute, validation_helper`
@@ -55,7 +55,7 @@ end
 
 ```
 
-#### Error handling failed Validations 
+#### Error Handling Failed Validations 
 
 ```
 # When a validation fails it's not added to the DB. When testing your validations you can confirm the failure in a few ways. If you look at an instance of a failed validation, it will not have an id.
