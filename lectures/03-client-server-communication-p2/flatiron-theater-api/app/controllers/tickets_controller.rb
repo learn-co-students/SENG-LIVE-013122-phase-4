@@ -1,15 +1,31 @@
 class TicketsController < ApplicationController
-    # Break Out Activity #1 - Add Index Action
+    #Review: Index Action
+    def index
+        render json: Ticket.all, status: :ok
+    end
 
-    # Break Out Activity #1 - Add Show Action
+    #Review: Show Action
 
-        # Make Sure to Add Error Handling!
+    def show
+        ticket = Ticket.find(params[:id])
+        render json: ticket, status: :ok
+    rescue ActiveRecord::RecordInvalid => invalid
+        render json: { errors: invalid.record.errors }, status: :not_found  
+    end
 
-    # Break Out Activity #1 - Add Create Action
-
-        # Make Sure to Add Error Handling!
-
+    #Review: Create action 
+    def create 
+        ticket = Ticket.create(ticket_params)
+        render json: ticket, status: :created
+    rescue ActiveRecord::RecordInvalid => invalid
+        render json: { errors: invalid.record.errors }, status: :unprocessable_entity
+    end
+    
+    #Review: Strong Params 
     private
 
-    # Break Out Activity #1 - Add Strong Params
+    def ticket_params
+        params.permit(:price, :user_id, :production_id)
+    end 
+    
 end
