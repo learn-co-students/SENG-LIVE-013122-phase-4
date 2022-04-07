@@ -1,17 +1,15 @@
-# Phase-4-112221
+# Client Server Communication (Part 2)
 
-# Client Server Communication pt2
-## SWBAT
-- [] handle validations in the controller
+## Lecture Objectives
+- [] Handle validations in the controller
 - [] Use strong params
-- [] Implement a destroy route
-- [] Implement an update route
-- [] handle foreign key restraint errors  
+- [] Implement a `destroy` route
+- [] Implement an `update` route
+- [] Handle foreign key restraint errors  
 
 ### Deliverables 
-- [] Add Create to Production 
-- [] Add Update and Delete to user 
-- [] Add Full CRUD to Ticket
+- [] Add Update + Destroy + Strong Params to Productions Controller
+- [] Add Full CRUD + Strong Params to Tickets Controller
 
 ### Domain
 ![domain_2](assets/domain_2.png)
@@ -27,7 +25,7 @@ For example, Ticket holds a Foreign key for Production and User. If we try to `.
 ```
 
 There are two ways to deal with this. 
-- If you don't need the dependencies. Destroy the foreign key dependencies when you destroy a resource.  
+- If you don't need the dependencies, destroy the foreign key dependencies when you destroy a resource.  
 
 ```
    has_many :user, dependent: :delete
@@ -35,7 +33,7 @@ There are two ways to deal with this.
    has_many :user, dependent: :destroy
 
 ```
-- If you need to keep the dependencies. Force the foreign key to null using nullify. 
+- If you need to keep the dependencies, force the foreign key to null using nullify. 
 
 ```
   has_many :user, dependent: :nullify
@@ -75,6 +73,4 @@ To Update a resource:
     rescue ActiveRecord::RecordInvalid => invalid
         render json: { errors: invalid.record.errors }, status: :not_found
     end 
-
-
 ```
