@@ -10,5 +10,5 @@ class ProductionRolesController < ApplicationController
     def show
         production_role = ProductionRole.find(params[:id])
         render json: production_roles, status: :okay
-    end 
+    end
 end

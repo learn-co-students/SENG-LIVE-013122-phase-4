@@ -3,7 +3,7 @@
 - [] Implement Active Model Serializer  
 - [] Create custom serializers 
 - [] Format data with serialization
-- [] Create custom validations
+- [] Review custom validations
 
 ### Deliverables 
 - [] Add serializer for Production 
