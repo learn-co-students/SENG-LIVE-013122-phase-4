@@ -2,12 +2,20 @@ class UsersController < ApplicationController
     
     # '/users'
     def index
-        render json: User.all
+        users = User.all
+
+        # Access Deeply Nested Information for User's Production's Users
+        # Use Case => See Other Attendees for Productions
+        render json: users, include: ['productions', 'productions.users']
     end 
 
     # '/users/1'
     def show
-        #Show current user
+        user = User.find(params[:id])
+        
+        # Access Deeply Nested Information for User's Production's Users
+        # Use Case => See Other Attendees for Productions
+        render json: user, include: ['productions', 'productions.users']
     end 
 
     # '/users'

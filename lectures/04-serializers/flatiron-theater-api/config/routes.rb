@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :production_roles
   resources :productions, only: [:index, :show, :destroy]
 
-#  get '/production', to: 'production#index'
+  get '/productions/:production_id/users/:user_id', to: 'productions#user_show'
 end

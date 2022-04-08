@@ -5,13 +5,13 @@ class TicketsController < ApplicationController
     # '/tickets'
     def index 
         tickets = Ticket.all
-        render json: tickets, status: :ok 
+        render json: tickets, status: :ok
     end 
 
     # '/tickets/1'
     def show
         ticket = Ticket.find(params[:id])
-        render json:ticket, status: :ok
+        render json: ticket, status: :ok
     end  
 
     # '/tickets'

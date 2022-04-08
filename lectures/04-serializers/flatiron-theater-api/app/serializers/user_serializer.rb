@@ -5,5 +5,10 @@
 class UserSerializer < ActiveModel::Serializer
   # 1. Add attributes for "name", "email", "admin"
 
-  # 2. Add Active Record Macros to associate Users with Many Tickets / Many Productions
+  attributes :id, :name, :email, :admin
+
+  # 2. Add Active Record Macros to Return Associated Tickets / Productions
+
+  has_many :tickets
+  has_many :productions
 end
