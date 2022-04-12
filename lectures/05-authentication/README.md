@@ -1,4 +1,4 @@
-# Serializers
+# Authentication
 
 ## Lecture Objectives
 - [ ] Explain the difference between Authentication and Authorization
