@@ -14,7 +14,7 @@ function App() {
   const [cart, setCart] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/productions')
+    fetch('/productions')
     .then(res => res.json())
     .then(setProductions)
   },[])

@@ -1,9 +1,12 @@
 class SessionsController < ApplicationController
-    # Break Out Activity #1 => Add Action (sessions#login) To Handle Login
-    
-    # Find User via "username" params
-    
-    # If User authenticates, render "user" as JSON with "status: :ok"
-
-    # If User does not authenticate, render "Invalid Password or Username" with "status: :unprocessable_entity"
+    def login
+        user = User.find_by!(name:params[:username])
+        
+        # if user && user.authenticate
+        if user&.authenticate(params[:password])
+            render json: user, status: :ok 
+        else 
+            render json: {error: "Invalid Password or Username"}, status: :unprocessable_entity
+        end 
+    end 
 end

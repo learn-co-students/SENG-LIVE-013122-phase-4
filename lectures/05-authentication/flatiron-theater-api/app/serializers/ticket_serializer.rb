@@ -1,12 +1,16 @@
 class TicketSerializer < ActiveModel::Serializer
-  attributes :price, :production, :user
+  attributes :id, :user, :production, :price
 
- 
-  def production
-    object.production.title
-  end 
+  # belongs_to :user
+  # belongs_to :production
 
   def user
     object.user.name
   end 
+
+  def production
+    object.production.title
+  end 
+
+
 end

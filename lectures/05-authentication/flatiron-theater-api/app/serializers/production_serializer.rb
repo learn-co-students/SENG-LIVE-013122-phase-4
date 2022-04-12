@@ -1,7 +1,7 @@
 class ProductionSerializer < ActiveModel::Serializer
-  attributes :id, :title, :genre, :description, :image, :director, :budget, :ongoing
+  attributes :title, :genre, :description, :image, :budget, :ongoing
 
-  has_many :tickets
+  has_many :production_roles
   has_many :users
 
   def budget
@@ -9,7 +9,6 @@ class ProductionSerializer < ActiveModel::Serializer
   end 
 
   def ongoing
-    object.ongoing ? "Actively showing" : "Not showing"
+    object.ongoing ? "Activley Showing" : "No Showing"
   end 
-
 end

@@ -4,7 +4,7 @@ function ProductionCard({production}) {
     const {title, budget, genre, image, id} = production
     console.log(production)
     return (
-      <Link to={`http://localhost:3000/productions/${id}`}>
+      <Link to={`/productions/${id}`}>
       <tr className="table-row" >
        <td>{title}</td>
        <td>{genre}</td>
