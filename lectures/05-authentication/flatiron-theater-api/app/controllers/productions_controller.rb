@@ -10,6 +10,7 @@ class ProductionsController < ApplicationController
 
     def create
         production = Production.create!(production_params)
+        render json: production
     end 
 
     def update 

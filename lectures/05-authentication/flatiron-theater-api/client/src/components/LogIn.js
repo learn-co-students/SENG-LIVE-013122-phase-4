@@ -8,12 +8,14 @@ function Login() {
 
     function onSubmit(e){
         e.preventDefault()
-        const user = {
-            username: username,
+        let user = {
+            username,
             password
         }
        
-        fetch(`/login`,{
+        console.log(user)
+
+        fetch('/login',{
           method:'POST',
           headers:{'Content-Type': 'application/json'},
           body:JSON.stringify(user)

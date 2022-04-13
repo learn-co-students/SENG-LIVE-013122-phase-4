@@ -10,9 +10,12 @@ function ProductionForm({handlePost, errors}) {
     description:''
   })
 
+  // console.log(formData)
+
 
   function onSubmit(e){
     e.preventDefault()
+    
     const production = {
       title: formData.title,
       genre: formData.genre,
@@ -22,40 +25,45 @@ function ProductionForm({handlePost, errors}) {
       description: formData.description,
       ongoing:true
     }
+
+    console.log(formData)
+
     handlePost(production)
   }
     return (
       <div className="App">
-        {errors?errors.map(e => <div>{e}</div>):null}
+        {console.log(errors)}
+        
+        {/* {errors?errors.map(e => <div>{e}</div>):null} */}
        <form onSubmit={onSubmit}>
        <label>
           Title
-          <input type="text" value={formData.title} onChange={(e) => setFormData(e.target.value)} />
+          <input type="text" value={formData.title} onChange={(e) => setFormData({...formData, title: e.target.value})} />
         </label>
         <br/>
         <label>
         Genre
-          <input type="text" value={formData.genre} onChange={(e) => setFormData(e.target.value)} />
+          <input type="text" value={formData.genre} onChange={(e) => setFormData({...formData, genre: e.target.value})} />
         </label>
         <br/>
         <label>
         Budget
-          <input type="number" value={formData.budget} onChange={(e) => setFormData(e.target.value)} />
+          <input type="number" value={formData.budget} onChange={(e) => setFormData({...formData, budget: e.target.value})} />
         </label>
         <br/>
         <label>
         Image
-          <input type="text" value={formData.image} onChange={(e) => setFormData(e.target.value)} />
+          <input type="text" value={formData.image} onChange={(e) => setFormData({...formData, image: e.target.value})} />
         </label>
         <br/>
         <label>
         Director
-          <input type="text" value={formData.director} onChange={(e) => setFormData(e.target.value)} />
+          <input type="text" value={formData.director} onChange={(e) => setFormData({...formData, director: e.target.value})} />
         </label>
         <br/>
         <label>
         Description
-          <textarea type="text" rows="4" cols="50" value={formData.description} onChange={(e) => setFormData(e.target.value)} />
+          <textarea type="text" rows="4" cols="50" value={formData.description} onChange={(e) => setFormData({...formData, description: e.target.value})} />
         </label>
         <br/>
         <input type="submit" value="Submit Production" />
