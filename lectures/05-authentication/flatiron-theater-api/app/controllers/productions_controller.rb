@@ -14,7 +14,7 @@ class ProductionsController < ApplicationController
         production = Production.find(params[:id])
         production.destroy
         head :no_content
-    end 
+    end
 
     #Review: Strong Params 
 end
