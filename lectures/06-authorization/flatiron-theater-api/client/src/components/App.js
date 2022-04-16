@@ -24,14 +24,13 @@ function App() {
         .then((user) => {
           setIsAuthenticated(true);
           setUser(user);
+
+          fetch('/productions')
+          .then(res => res.json())
+          .then(setProductions);
         });
       }
     });
-
-    fetch('/productions')
-    .then(res => res.json())
-    .then(setProductions);
-
   },[]);
 
   function handlePost(obj){

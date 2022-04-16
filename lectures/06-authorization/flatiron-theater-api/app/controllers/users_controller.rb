@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     # Break Out Activity #2 => Set 'authorize_user' to Skip Create Action
+    skip_before_action :authorize_user, only: [:create]
 
     def index
         render json: User.all

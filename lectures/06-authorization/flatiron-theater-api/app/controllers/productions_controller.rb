@@ -3,6 +3,8 @@ class ProductionsController < ApplicationController
 
         # - We only want Admins to have the capability to create / destroy Productions
 
+    before_action :is_admin, only: [:create, :destroy]
+
     def index 
         render json: Production.all
     end 
