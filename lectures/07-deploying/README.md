@@ -1,4 +1,4 @@
-# Authorization 
+# Deploying
 
 ## Lecture Objectives
 - [ ] Understand what "deploying" means
