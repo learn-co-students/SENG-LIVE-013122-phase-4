@@ -1,10 +1,12 @@
-# Deploying
+# Deploying 
 
 ## Lecture Objectives
 - [ ] Understand what "deploying" means
 - [ ] Deploy to Heroku
 - [ ] Seed and Migrate on Heroku
 - [ ] Push updates to Heroku
+
+
 ### Heroku 
 Heroku is a Platform as a Service (PaaS). It manages the hardware and environment we can use to host our application. Instead of hosting it locally we can use Heroku's service to host our app on the web.
 
@@ -113,6 +115,8 @@ end
 
 
 ```
+
+
 heroku create
 
 git add .
